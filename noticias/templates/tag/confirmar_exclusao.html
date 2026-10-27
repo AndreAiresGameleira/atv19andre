@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Excluir Tag - Portal Escolar{% endblock %}
+
+{% block content %}
+<h2>Excluir tag</h2>
+
+<p>Deseja realmente excluir a tag <strong>{{ tag.nome }}</strong>?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn-exclude">Confirmar exclusão</button>
+    <a href="{% url 'noticias:tag_detalhe' tag.id %}" class="btn-back">Cancelar</a>
+</form>
+{% endblock %}
